@@ -1,3 +1,49 @@
 <resources>
     <string name="app_name">expression</string>
+    <string name="account">帐号:</string>
+    <string name="password">密码:</string>
+    <string name="input_account">用户名/邮箱/手机号</string>
+    <string name="input_password">请输入密码</string>
+    <string name="login">登    陆</string>
+    <string name="new_register">没有帐号?</string>
+    <string name="action_search">查找</string>
+    <string name="action_add">添加</string>
+    <string name="menu_group_chat">敬请期待</string>
+    <string name="menu_feedback">敬请期待</string>
+    <string name="menu_addfriend">敬请期待</string>
+    <string name="menu_scan">敬请期待</string>
+    <string name="tab_name">快递</string>
+    <string name="tab_contact">图书馆</string>
+    <string name="tab_found">定位</string>
+    <string name="tab_me">我</string>
+    <string name="telephone">手机号：</string>
+    <string name="youxiang">邮    箱：</string>
+    <string name="name">姓    名：</string>
+    <string name="id">身份证号：</string>
+    <string name="bt_zhuce">注  册</string>
+    <string name="text_load">加载中...</string>
+    <string name="tv_grade_cridit1">查找各科成绩:</string>
+    <string name="tv_grade_cridit2">(sname,grade,cridit)</string>
+    <string name="hint_grade_cridit">请输入课程名</string>
+    <string name="bt_select">查询</string>
+    <string name="tv_grade_cridit">输入正确结果后显示</string>
+    <string name="tv_choose2">sno,sname,ssex,dept</string>
+    <string name="tv_choose1">查询您的基本信息：</string>
+    <string name="tv_classroom1">教室查询</string>
+    <string name="ht_classroom">输入时间或者教室名字</string>
+    <string-array name="info">
+        <item>我的订单</item>
+        <item>我的信息</item>
+        <item>我去派件</item>
+        <item>历史订单</item>
+        <item>关于我们</item>
+        <item>设置</item>
+    </string-array>
+    <string-array name="kd_company">
+        <item>中通快递</item>
+        <item>圆通快递</item>
+        <item>韵达快递</item>
+        <item>申通快递</item>
+        <item>关于我们</item>
+    </string-array>
 </resources>
