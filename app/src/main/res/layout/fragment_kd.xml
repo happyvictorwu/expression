@@ -1,7 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
 
-</LinearLayout>
+        <!-- 图片轮播 -->
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:orientation="vertical" >
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/adv_pager"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" >
+            </android.support.v4.view.ViewPager>
+
+            <LinearLayout
+                android:id="@+id/viewGroup"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/adv_pager"
+                android:layout_marginTop="-25px"
+                android:gravity="right"
+                android:orientation="horizontal" >
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-40dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left" >
+                <Button
+                    android:id="@+id/bt_find_collection"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/find_collection" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/bt_give_money"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/give_money" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="right" >
+
+                <Button
+                    android:id="@+id/bt_card"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/card" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left" >
+
+                <Button
+                    android:id="@+id/bt_write_comments"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/write_comments" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/bt_mi_money"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/mi_money" />
+            </LinearLayout>
+
+              <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right" >
+
+                <Button
+                    android:id="@+id/bt_scan"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/scan" />
+            </LinearLayout>
+        </LinearLayout>
+		 -->
+
+        <ListView
+            android:layout_marginTop="15dp"
+            android:id="@+id/lv_team"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </ListView>
+    </LinearLayout>
+
+</ScrollView>
