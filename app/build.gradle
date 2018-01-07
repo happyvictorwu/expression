@@ -29,5 +29,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     //Bmob
     compile 'cn.bmob.android:bmob-sdk:3.5.5'
+    //CircleImageView
+    compile 'de.hdodenhof:circleimageview:2.2.0'
 
 }

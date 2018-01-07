@@ -8,22 +8,16 @@ package com.yuxuan.admin.expression.ui;
  * 描述:     登陆
  */
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.view.Window;
 
+import android.app.Activity;
+import android.os.Bundle;
 import com.yuxuan.admin.expression.R;
 
-public class LoginActivity extends AppCompatActivity{
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        // UtilTools.setStrategy();
-        super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_login);
 
-        // 初始化布局
-        //initView();
+public class LoginActivity extends Activity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
     }
 }

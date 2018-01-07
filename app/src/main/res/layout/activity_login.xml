@@ -1,8 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ui.LoginActivity" >
+    tools:context=".ui.LoginActivity" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -10,7 +11,7 @@
         android:orientation="vertical"
         android:padding="10dp" >
 
-        <view.CircleImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv_head"
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -34,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:text="账    号"
                 android:textColor="#444444"
-                android:textSize="15sp" />
+                android:textSize="18sp" />
 
             <View
                 android:layout_width="1px"
@@ -50,7 +51,6 @@
                 android:layout_weight="1"
                 android:hint="@string/input_account"
                 android:background="@null"
-                android:singleLine="true"
                 android:textColorHint="#AAAAAA"
                 android:textSize="15sp" />
         </LinearLayout>
@@ -66,11 +66,12 @@
             >
 
             <TextView
+                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="密    码"
                 android:textColor="#444444"
-                android:textSize="15sp" />
+                android:textSize="18sp" />
 
             <View
                 android:layout_width="1px"
@@ -88,42 +89,48 @@
                 android:ems="16"
                 android:hint="@string/input_password"
                 android:inputType="textPassword"
-                android:singleLine="true"
                 android:textColorHint="#AAAAAA"
                 android:textSize="15sp" />
         </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp" >
+            android:layout_height="40dp">
 
             <CheckBox
                 android:id="@+id/cb_remberPWD"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_alignParentLeft="true"
                 android:gravity="center_vertical"
                 android:text="记住密码"
-                android:textSize="12sp" />
+                android:textSize="16sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
 
             <TextView
                 android:id="@+id/bt_register"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_alignParentRight="true"
                 android:gravity="center_vertical"
                 android:text="@string/new_register"
                 android:textColor="#0000ff"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="30dp"
+                android:layout_marginEnd="30dp" />
         </RelativeLayout>
 
         <Button
             android:id="@+id/bt_login"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginTop="30dp"
             android:background="@drawable/button_form"
             android:text="@string/login"
+            android:textSize="20sp"
             android:textColor="@android:color/white" />
 
         <TextView
