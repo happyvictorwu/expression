@@ -1,0 +1,151 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ui.LoginActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <view.CircleImageView
+            android:id="@+id/iv_head"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/logo" />
+
+        <!-- 输入用户名 -->
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_edittext"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="账    号"
+                android:textColor="#444444"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:background="#d2d2d2" />
+
+            <EditText
+                android:id="@+id/et_acconut"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:hint="@string/input_account"
+                android:background="@null"
+                android:singleLine="true"
+                android:textColorHint="#AAAAAA"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <!-- 密码，输入密码 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_edittext"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="密    码"
+                android:textColor="#444444"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:background="#d2d2d2" />
+
+            <EditText
+                android:id="@+id/et_userpassword"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:layout_marginLeft="5dp"
+                android:ems="16"
+                android:hint="@string/input_password"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textColorHint="#AAAAAA"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp" >
+
+            <CheckBox
+                android:id="@+id/cb_remberPWD"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:gravity="center_vertical"
+                android:text="记住密码"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/bt_register"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
+                android:text="@string/new_register"
+                android:textColor="#0000ff"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/bt_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/button_form"
+            android:text="@string/login"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:text="----------第三方登录----------"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:id="@+id/ib_qq"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/qq" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
