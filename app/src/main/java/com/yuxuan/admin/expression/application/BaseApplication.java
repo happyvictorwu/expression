@@ -10,11 +10,17 @@ package com.yuxuan.admin.expression.application;
 import android.app.Application;
 
 import com.yuxuan.admin.expression.utils.L;
+import com.yuxuan.admin.expression.utils.StaticClass;
+
+import cn.bmob.v3.Bmob;
+
 
 public class BaseApplication extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
         L.d("init_OK");
+        //初始化 Bmob 云服务
+        Bmob.initialize(getApplicationContext(), StaticClass.BMOB_APPLICATION_ID);
     }
 }
