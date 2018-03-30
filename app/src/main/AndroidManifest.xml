@@ -41,6 +41,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <!-- 注册 -->
         <activity android:name=".ui.RegiestActivity">
             <intent-filter>
@@ -49,6 +50,89 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <!-- 找代取 -->
+        <activity
+            android:name=".activity.KDFoundTeamAndPersonActivity"
+            android:label="找代取" >
+            <intent-filter>
+                <action android:name="com.delivefunction.FirstChoose" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- 找代取个人 -->
+        <activity
+            android:name=".activity.KDPersonDQActivity"
+            android:label="个人代取" />
+
+        <!-- 找代取团队 -->
+        <activity
+            android:name=".activity.KDTeamDQActivity"
+            android:label="团队代取" />
+
+        <!-- 快递代取信息确认 -->
+        <activity
+            android:name=".activity.KDDQInfomationActivity"
+            android:label="信息确认" />
+
+        <!-- 我来赚钱 -->
+        <activity
+            android:name=".activity.KDZhuanQianActivity"
+            android:label="我来赚钱" >
+            <intent-filter>
+                <action android:name="com.delivefunction.Zhuanqian" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- 团队注册 -->
+        <activity
+            android:name=".activity.KDTeamRegister"
+            android:label="团队注册" >
+            <intent-filter>
+                <action android:name="com.delivefunction.Team_shouye" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- 个人注册 -->
+        <activity
+            android:name=".activity.KDGerenZhuceActivity"
+            android:label="个人注册" >
+            <intent-filter>
+                <action android:name="com.delivefunction.Gerenzhuce" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- 快递查询界面 -->
+        <activity
+            android:name=".activity.KDQueryActivity"
+            android:label="快递查询" >
+            <intent-filter>
+                <action android:name="com.activity.KDQueryActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- 我的信息 -->
+        <activity
+            android:name=".activity.UMyInfomationActivity"
+            android:label="我的信息" />
+
+        <!-- 关于我们界面 -->
+        <activity
+            android:name=".activity.UAboutWeActivity"
+            android:label="关于我们" />
+
+
+
     </application>
 
 </manifest>

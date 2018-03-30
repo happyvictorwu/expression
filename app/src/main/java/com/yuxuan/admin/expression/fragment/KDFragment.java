@@ -9,6 +9,8 @@ package com.yuxuan.admin.expression.fragment;
  */
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -27,10 +29,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.yuxuan.admin.expression.R;
+import com.yuxuan.admin.expression.activity.KDDQInfomationActivity;
+import com.yuxuan.admin.expression.activity.KDFoundTeamAndPersonActivity;
+import com.yuxuan.admin.expression.activity.KDQueryActivity;
+import com.yuxuan.admin.expression.activity.KDZhuanQianActivity;
 import com.yuxuan.admin.expression.adapter.KDTeamAdapter;
 import com.yuxuan.admin.expression.entity.KDTeamData;
+import com.yuxuan.admin.expression.entity.MyUser;
 import com.yuxuan.admin.expression.utils.L;
 import com.yuxuan.admin.expression.utils.UtilTools;
 import com.yuxuan.admin.expression.view.CustomDialog;
@@ -38,6 +46,11 @@ import com.yuxuan.admin.expression.view.CustomDialog;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
+
+import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.FindListener;
 
 public class KDFragment extends Fragment implements View.OnClickListener {
 
@@ -139,7 +152,123 @@ public class KDFragment extends Fragment implements View.OnClickListener {
         bt_ok = (Button) dialog.findViewById(R.id.bt_ok);
         bt_ok.setOnClickListener(this);
 
+        lv_deliveTeam = (ListView) view.findViewById(R.id.lv_team);
+        getData();
+        lv_deliveTeam.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String team_name = data.get(position).getTeam_name();
+                setDataToView(team_name);
+                dialog.show();
+
+            }
+        });
+
     }
+
+    /**
+     * 设置数据到点击 listView item 后显示的Dialog 上
+     * 设置昵称
+     * 设置邮箱
+     * 设置手机号
+     * 设置代取性质
+     * @param team_name 团队名称
+     */
+    private void setDataToView(String team_name) {
+        BmobQuery<MyUser> query = new BmobQuery<MyUser>();
+        query.addWhereEqualTo("username", team_name);
+        query.findObjects(new FindListener<MyUser>() {
+            @Override
+            public void done(List<MyUser> users, BmobException e) {
+                if (e == null) {
+                    MyUser user = users.get(0);
+                    String username = user.getUsername();
+                    String phoneNumber = user.getMobilePhoneNumber();
+                    String email = user.getEmail();
+                    String property = user.getTeamFlag();
+                    if (property.equals("1")) {
+                        property = "个人代取";
+                    } else {
+                        property = "团队代取";
+                    }
+                    et_nichen.setText(username);
+                    et_mail.setText(email);
+                    et_phoneNumber.setText(phoneNumber);
+                    et_property.setText(property);
+
+                    String mPhone = BmobUser.getCurrentUser().getMobilePhoneNumber();
+                    if( phoneNumber.equals(mPhone)){
+                        bt_ok.setText("不能选择自己");
+                        bt_ok.setEnabled(false);
+                    }else{
+                        bt_ok.setText("就选他了");
+                        bt_ok.setEnabled(true);
+                    }
+
+                } else {
+                    Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+    }
+
+    /**
+     * 从服务器获取数据
+     * 获取头像
+     * 获取用户名
+     * 获取代取的性质（团队代取 or 个人代取）
+     */
+    private void getData() {
+        loadDialog.show();
+        List<BmobQuery<MyUser>> queries = new ArrayList<BmobQuery<MyUser>>();
+        BmobQuery<MyUser> q2 = new BmobQuery<MyUser>();
+        q2.addQueryKeys("teamFlag");
+        queries.add(q2);
+
+        BmobQuery<MyUser> query = new BmobQuery<MyUser>();
+        query.or(queries).order("-createdAt").findObjects(new FindListener<MyUser>() {
+            @Override
+            public void done(List<MyUser> object, BmobException e) {
+                loadDialog.dismiss();
+                if (e == null) {
+                    L.i("getData size = " + object.size());
+                    data.clear();
+                    KDTeamData bufferData = null;
+                    MyUser user = null;
+                    for (int i = 0; i < object.size(); i++) {
+                        bufferData = new KDTeamData();
+                        user = object.get(i);
+                        //判断是否注册
+                        if (user.getTeamFlag() == null ){
+                            continue;
+                        }
+                        bufferData.setTeam_name(user.getUsername().toString());
+                        //判断是个人还是团队
+                        if (user.getTeamFlag().equals("1")) {
+                            bufferData.setTeam_property("个人代取");
+                        } else {
+                            bufferData.setTeam_property(user.getTeamFlag() + "团队");
+                        }
+                        //判断是否有头像，如果没有，则用logo代替
+                        if(user.getImgHead() == null){
+                            BitmapDrawable bitmap = (BitmapDrawable) getResources().getDrawable(R.drawable.logo);
+                            String logoString = UtilTools.bitmapToString(getActivity(), bitmap);
+                            bufferData.setTeam_head(logoString);
+                        }else{
+                            bufferData.setTeam_head(user.getImgHead().toString());
+                        }
+                        data.add(bufferData);
+                    }
+                    handler.sendEmptyMessage(INIT_DATA_OK);
+                } else {
+                    L.i("getData 失败");
+                }
+            }
+        });
+    }
+
 
     // 初始化滚动图片中的图片
     private void initViewPager(View view) {
@@ -220,10 +349,35 @@ public class KDFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        switch (v.getId()) {
+            // 点击找代取按钮
+            case R.id.bt_find_collection:
+                startActivity(new Intent(getActivity(), KDFoundTeamAndPersonActivity.class));
+                break;
+            // 点击我来赚钱按钮
+            case R.id.bt_give_money:
+                startActivity(new Intent(getActivity(), KDZhuanQianActivity.class));
+                break;
+            // 点击快递查询
+            case R.id.bt_card:
+                startActivity(new Intent(getActivity(), KDQueryActivity.class));
+                break;
+            //点击 "就选他了"按钮
+            case R.id.bt_ok:
+                String dq_phone = et_phoneNumber.getText().toString().trim();
+                Intent intent = new Intent(getActivity(), KDDQInfomationActivity.class);
+                intent.putExtra("dq_phone", dq_phone);
+                startActivity(intent);
+                dialog.dismiss();
+                break;
 
+            default:
+                break;
+        }
 
     }
 
+    
 
 
     //以下的是广告来自initViewPager
