@@ -8,11 +8,12 @@ package com.yuxuan.admin.expression.ui;
  * 描述:     Activity基类 统一Activity
  */
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-public class BaseActivity extends AppCompatActivity {
+public class BaseActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

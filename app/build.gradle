@@ -24,12 +24,12 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    //Bmob
+    //CircleImageView
+
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
-    //Bmob
     compile 'cn.bmob.android:bmob-sdk:3.5.5'
-    //CircleImageView
     compile 'de.hdodenhof:circleimageview:2.2.0'
-
+    testCompile 'junit:junit:4.12'
 }
