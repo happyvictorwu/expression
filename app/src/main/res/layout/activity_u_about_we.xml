@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:alpha="50"
+            android:background="#990000ff"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/civ_logo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/logo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="校园小蜜"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="版本：1.1.0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="反馈邮箱：993113161@qq.com" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:autoLink="phone"
+                android:text="客服热线：13132529512" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="版权：校园小蜜开发团队所有" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="#ff0000"
+                android:textSize="12sp"
+                android:text="声明：部分资源来于网络,若侵权，请联系我们修改" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/holo_green_light" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="开源许可:" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:autoLink="web"
+                android:text="https://github.com/kymjs/RxVolley" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:autoLink="web"
+                android:text="http://square.github.io/picasso/" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:autoLink="web"
+                android:text="https://github.com/hdodenhof/CircleImageView" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

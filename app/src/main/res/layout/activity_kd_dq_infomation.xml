@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <EditText
+            android:id="@+id/et_phoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/eselector"
+            android:hint="手机号"
+            android:singleLine="true"
+            android:textSize="15sp" >
+        </EditText>
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/eselector"
+            android:hint="姓名/填写真实姓名便于找快件"
+            android:singleLine="true"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/et_addr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/eselector"
+            android:hint="地址/确保地址正确无误"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/et_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/eselector"
+            android:hint="说明/对快件做简要说明便于寻找"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/et_other"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/eselector"
+            android:hint="备注/这里可以填写送达时间等"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="为了保证快递能更快的到达，请填写正确信息"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="9sp" />
+
+        <Button
+            android:id="@+id/btn_dq_ok"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/selector"
+            android:text="确定代取"
+            android:textColor="#fff"
+            android:textSize="20dp" />
+    </LinearLayout>
+
+</ScrollView>

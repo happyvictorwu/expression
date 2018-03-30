@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <Spinner
+        android:id="@+id/sp_firm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <EditText
+        android:id="@+id/et_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/eselector"
+        android:hint="快递编号"
+        android:singleLine="true"
+        android:textSize="15sp" />
+    <Button
+        android:id="@+id/btn_query"
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector"
+        android:text="查  询"
+        android:textColor="#fff"
+        android:textSize="20dp" />
+
+    <ListView
+        android:id="@+id/lv_display"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp"
+        >
+    </ListView>
+
+</LinearLayout>

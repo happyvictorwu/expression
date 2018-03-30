@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="30dp">
+
+    <EditText
+        android:id="@+id/et_team_teleohone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入团队电话"
+        android:singleLine="true"
+        android:textSize="15sp"
+        android:background="@drawable/eselector"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/et_team_mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入团队邮箱"
+        android:singleLine="true"
+        android:textSize="15sp"
+        android:background="@drawable/eselector"
+        android:layout_marginTop="3dp" />
+
+    <EditText
+        android:id="@+id/et_tname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入团队名称"
+        android:singleLine="true"
+        android:textSize="15sp"
+        android:background="@drawable/eselector"
+        android:layout_marginTop="3dp" />
+
+    <EditText
+        android:id="@+id/et_team_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入团队人数"
+        android:singleLine="true"
+        android:textSize="15sp"
+        android:background="@drawable/eselector"
+        android:layout_marginTop="3dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入学校名称"
+        android:singleLine="true"
+        android:textSize="15sp"
+        android:background="@drawable/eselector"
+        android:layout_marginTop="3dp" />
+
+    <Button
+        android:id="@+id/bt_zhuce"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/selector"
+        android:textColor="@android:color/white"
+        android:text="@string/bt_zhuce"
+        android:textSize="20sp"/>
+
+</LinearLayout>
