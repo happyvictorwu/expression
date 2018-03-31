@@ -22,7 +22,7 @@ import com.kymjs.rxvolley.RxVolley;
 import com.kymjs.rxvolley.client.HttpCallback;
 import com.yuxuan.admin.expression.R;
 
-import com.yuxuan.admin.expression.adapter.CourierAdapter;
+import com.yuxuan.admin.expression.adapter.KDQueryAdapter;
 import com.yuxuan.admin.expression.entity.CourierData;
 import com.yuxuan.admin.expression.ui.BaseActivity;
 import com.yuxuan.admin.expression.utils.L;
@@ -120,7 +120,7 @@ public class KDQueryActivity extends BaseActivity implements View.OnClickListene
             }
             //倒序
             Collections.reverse(mList);
-            CourierAdapter adapter = new CourierAdapter(this,mList);
+            com.yuxuan.admin.expression.adapter.KDQueryAdapter adapter = new KDQueryAdapter(this,mList);
             mListView.setAdapter(adapter);
         } catch (JSONException e) {
             e.printStackTrace();

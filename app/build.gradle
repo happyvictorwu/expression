@@ -42,5 +42,4 @@ dependencies {
         exclude group: 'io.reactivex'
     }
 
-
 }
