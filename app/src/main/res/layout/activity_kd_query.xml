@@ -1,43 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="20dp">
 
-    <Spinner
-        android:id="@+id/sp_firm"
+    <EditText
+        android:id="@+id/et_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
+        android:hint="快递公司"
+        android:text="zto"/>
+
 
     <EditText
         android:id="@+id/et_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:background="@drawable/eselector"
-        android:hint="快递编号"
-        android:singleLine="true"
-        android:textSize="15sp" />
+        android:hint="快递号"
+        android:text="416688878066"/>
+
     <Button
-        android:id="@+id/btn_query"
+        android:id="@+id/btn_get_courier"
         android:layout_width="match_parent"
-        android:layout_height="40sp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/selector"
-        android:text="查  询"
-        android:textColor="#fff"
-        android:textSize="20dp" />
+        android:layout_height="50dp"
+        android:background="@drawable/button_bg"
+        android:text="查询"
+        android:textColor="@android:color/white"/>
 
     <ListView
-        android:id="@+id/lv_display"
+        android:id="@+id/mListView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="10dp"
-        >
-    </ListView>
+        android:layout_weight="1"/>
 
 </LinearLayout>

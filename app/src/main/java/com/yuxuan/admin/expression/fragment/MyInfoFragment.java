@@ -31,6 +31,7 @@ import android.widget.ListView;
 import com.yuxuan.admin.expression.R;
 import com.yuxuan.admin.expression.activity.UAboutWeActivity;
 import com.yuxuan.admin.expression.activity.UMyInfomationActivity;
+import com.yuxuan.admin.expression.activity.USetingActivity;
 import com.yuxuan.admin.expression.adapter.MyInfoAdapter;
 import com.yuxuan.admin.expression.entity.InfoItem;
 import com.yuxuan.admin.expression.entity.MyUser;
@@ -132,10 +133,10 @@ public class MyInfoFragment extends Fragment implements View.OnClickListener {
                     case "关于我们":
                         startActivity(new Intent(getActivity(), UAboutWeActivity.class));
                         break;
-//                    // 设置
-//                    case "设置":
-//                        startActivity(new Intent(getActivity(), USetingActivity.class));
-//                        break;
+                    // 设置
+                    case "设置":
+                        startActivity(new Intent(getActivity(), USetingActivity.class));
+                        break;
                     default:
                         break;
                 }

@@ -8,130 +8,122 @@ package com.yuxuan.admin.expression.activity;
  * 描述:     快递查询
  */
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
+
 import android.text.TextUtils;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 
+import com.kymjs.rxvolley.RxVolley;
+import com.kymjs.rxvolley.client.HttpCallback;
 import com.yuxuan.admin.expression.R;
-import com.yuxuan.admin.expression.adapter.CompaniesAdapter;
-import com.yuxuan.admin.expression.entity.CompaniesNo;
-import com.yuxuan.admin.expression.entity.KDQueryData;
+
+import com.yuxuan.admin.expression.adapter.CourierAdapter;
+import com.yuxuan.admin.expression.entity.CourierData;
 import com.yuxuan.admin.expression.ui.BaseActivity;
 import com.yuxuan.admin.expression.utils.L;
 import com.yuxuan.admin.expression.utils.StaticClass;
-import com.yuxuan.admin.expression.view.CustomDialog;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-import javax.xml.transform.ErrorListener;
 
-public class KDQueryActivity extends BaseActivity {
+public class KDQueryActivity extends BaseActivity implements View.OnClickListener {
+    private EditText et_name;
+    private EditText et_number;
+    private Button btn_get_courier;
+    private ListView mListView;
 
-//    private Button btn_query;
-//    private EditText et_number;
-//    private ListView lv_display;
-//    private Spinner sp_firm;
-//
-//    private List<KDQueryData> kDQueryData;
-//    private List<CompaniesNo> companies = new ArrayList<>();
-//    String[] mItems;
-//
-//    private CustomDialog dialog;
-//
-//    @SuppressLint("HandlerLeak")
-//    private Handler handler = new Handler(){
-//        public void handleMessage(Message msg) {
-//            if (msg.what == StaticClass.LOAD_DATA_OK){
-//                sp_firm.setAdapter(new CompaniesAdapter(KDQueryActivity.this, companies));
-//            }
-//        };
-//    };
-//
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_kd_query);
-//        //加载数据
-//        loadData();
-        //初始化布局
-//        initView();
+    private List<CourierData> mList = new ArrayList<>();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_kd_query);
+
+        initView();
     }
 
-//    //初始化数据
-//    private void loadData() {
-//        //获取所有可以查询的快递名称及其编号
-//        String url = "http://v.juhe.cn/exp/com?key=+" + StaticClass.KD_QUERY_KEY;
-//        RequestQueue mQueue = Volley.newRequestQueue(KDQueryActivity.this);
-//        StringRequest request = new StringRequest(url, new Listener<String>() {
-//
-//            @Override
-//            public void onResponse(String response) {
-//                L.i(response);
-//                //解析json
-//                parsingCompaniesJson(response);
-//            }
-//
-//        }, new ErrorListener() {
-//
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                Toast.makeText(KDQueryActivity.this, error + "", Toast.LENGTH_LONG).show();
-//
-//            }
-//        });
-//        mQueue.add(request);
-//    }
-//
-//    //初始化布局
-//    private void initView() {
-//
-//        dialog = new CustomDialog(this, WindowManager.LayoutParams.WRAP_CONTENT,
-//                WindowManager.LayoutParams.WRAP_CONTENT, R.layout.dialog_loading, R.style.Theme_dialog, Gravity.CENTER,
-//                R.style.pop_anim_style);
-//
-//        dialog.setCancelable(false);
-//
-//        btn_query = (Button) findViewById(R.id.btn_query);
-//        btn_query.setOnClickListener(this);
-//        et_number = (EditText) findViewById(R.id.et_number);
-//        sp_firm = (Spinner) findViewById(R.id.sp_firm);
-//
-//        lv_display = (ListView) findViewById(R.id.lv_display);
-//        lv_display.setDividerHeight(0);
-//
-//    }
-//
-//    @Override
-//    public void onClick(View v) {
-//        switch (v.getId()) {
-//            case R.id.btn_query:
-//                // String firm = et_firm.getText().toString().trim();
-//                String firm = companies.get(sp_firm.getSelectedItemPosition()).getNo();
-//                String number = et_number.getText().toString().trim();
-//                if (!TextUtils.isEmpty(firm) && !TextUtils.isEmpty(number)) {
-//                    queryKD(firm, number);
-//
-//                } else {
-//                    Toast.makeText(this, "输入框不能为空", Toast.LENGTH_SHORT).show();
-//                }
-//                break;
-//
-//            default:
-//                break;
-//        }
-//    }
+    //初始化View
+    private void initView() {
+        et_name = (EditText) findViewById(R.id.et_name);
+        et_number = (EditText) findViewById(R.id.et_number);
+        btn_get_courier = (Button) findViewById(R.id.btn_get_courier);
+        btn_get_courier.setOnClickListener(this);
+        mListView = (ListView) findViewById(R.id.mListView);
+    }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btn_get_courier:
+                /**
+                 * 1.获取输入框的内容
+                 * 2.判断是否为空
+                 * 3.拿到数据去请求数据（Json）
+                 * 4.解析Json
+                 * 5.listview适配器
+                 * 6.实体类（item）
+                 * 7.设置数据/显示效果
+                 */
 
-//}
+                //1.获取输入框的内容
+                String name = et_name.getText().toString().trim();
+                String number = et_number.getText().toString().trim();
+
+                //拼接我们的url
+                String url = "http://v.juhe.cn/exp/index?key=" + StaticClass.KD_QUERY_KEY
+                        + "&com=" + name + "&no=" + number;
+
+                //2.判断是否为空
+                if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(number)) {
+                    //3.拿到数据去请求数据（Json）
+                    RxVolley.get(url, new HttpCallback() {
+                        @Override
+                        public void onSuccess(String t) {
+                            //Toast.makeText(CourierActivity.this, t, Toast.LENGTH_SHORT).show();
+                            L.i("Courier:" + t);
+                            //4.解析Json
+                            parsingJson(t);
+                        }
+                    });
+                } else {
+                    Toast.makeText(this, getString(R.string.text_tost_empty), Toast.LENGTH_SHORT).show();
+                }
+                break;
+        }
+    }
+
+    //解析数据
+    private void parsingJson(String t) {
+        try {
+            JSONObject jsonObject = new JSONObject(t);
+            JSONObject jsonResult = jsonObject.getJSONObject("result");
+            JSONArray jsonArray = jsonResult.getJSONArray("list");
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject json = (JSONObject) jsonArray.get(i);
+
+                CourierData data = new CourierData();
+                data.setRemark(json.getString("remark"));
+                data.setZone(json.getString("zone"));
+                data.setDatetime(json.getString("datetime"));
+                mList.add(data);
+            }
+            //倒序
+            Collections.reverse(mList);
+            CourierAdapter adapter = new CourierAdapter(this,mList);
+            mListView.setAdapter(adapter);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+}

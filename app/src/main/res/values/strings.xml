@@ -31,6 +31,7 @@
     <string name="tv_choose1">查询您的基本信息：</string>
     <string name="tv_classroom1">教室查询</string>
     <string name="ht_classroom">输入时间或者教室名字</string>
+    <string name="text_tost_empty">输入框不能为空 ~</string>
     <string-array name="info">
         <item>我的订单</item>
         <item>我的信息</item>

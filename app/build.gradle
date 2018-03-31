@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.3"
     defaultConfig {
         applicationId "com.yuxuan.admin.expression"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -17,6 +17,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    useLibrary 'org.apache.http.legacy'
 }
 
 dependencies {
@@ -31,9 +32,15 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     //Bmob
-    compile 'cn.bmob.android:bmob-sdk:3.5.5'
+    compile ('cn.bmob.android:bmob-sdk:3.5.5') {
+        exclude group: 'io.reactivex'
+    }
     //CircleImageView
     compile 'de.hdodenhof:circleimageview:2.2.0'
+    //RxVolly
+    compile ('com.kymjs.rxvolley:rxvolley:1.1.4') {
+        exclude group: 'io.reactivex'
+    }
 
 
 }

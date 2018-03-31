@@ -131,6 +131,29 @@
             android:name=".activity.UAboutWeActivity"
             android:label="关于我们" />
 
+        <!-- 设置界面 -->
+        <activity
+            android:name=".activity.USetingActivity"
+            android:label="设置" />
+
+        <!-- 修改密码 -->
+        <activity
+            android:name=".activity.UModifyActivity"
+            android:label="密码修改" >
+            <intent-filter>
+                <action android:name="com.fragment.MyInfoFragmentItem" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- 手机验证 -->
+        <activity
+            android:name=".activity.UIdentifyPhoneActivity"
+            android:label="手机验证" />
+
+
+
 
 
     </application>
