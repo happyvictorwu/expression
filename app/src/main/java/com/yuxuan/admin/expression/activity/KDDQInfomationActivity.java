@@ -8,10 +8,11 @@ package com.yuxuan.admin.expression.activity;
  * 描述:     bishe
  */
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
+
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
@@ -118,24 +119,24 @@ public class KDDQInfomationActivity extends BaseActivity implements View.OnClick
             @Override
             public void done(String objectId, BmobException e) {
                 if (e == null) {
-                    // toast("创建数据成功：" + objectId);
+                    //Toast.makeText(KDDQInfomationActivity.this, "创建数据成功：" + objectId, Toast.LENGTH_SHORT).show();
                     L.i("添加ok");
                     dialog.dismiss();
-//                    new AlertDialog.Builder(KDDQInfomationActivity.this).setTitle("注意")
-//                            .setMessage("代取信息填写成功\n请到  '我的订单' 中查看详细信息\n我们稍后联系您，请保持信息畅通")
-//                            .setPositiveButton("我的订单？", new DialogInterface.OnClickListener() {
-//                                @Override
-//                                public void onClick(DialogInterface dialog, int which) {//支付宝业务？？？
-//                                    startActivity(new Intent(KDDQInfomationActivity.this, UMyOrdersActivity.class));
-//                                    finish();
-//
-//                                }
-//                            }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
-//                        @Override
-//                        public void onClick(DialogInterface dialog, int which) {
-//
-//                        }
-//                    }).show();
+                    new AlertDialog.Builder(KDDQInfomationActivity.this).setTitle("注意")
+                            .setMessage("代取信息填写成功\n请到  '我的订单' 中查看详细信息\n我们稍后联系您，请保持信息畅通")
+                            .setPositiveButton("我的订单？", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    startActivity(new Intent(KDDQInfomationActivity.this, UMyOrdersActivity.class));
+                                    finish();
+
+                                }
+                            }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    }).show();
 
 
 

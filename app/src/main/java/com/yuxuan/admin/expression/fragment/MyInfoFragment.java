@@ -30,7 +30,10 @@ import android.widget.ListView;
 
 import com.yuxuan.admin.expression.R;
 import com.yuxuan.admin.expression.activity.UAboutWeActivity;
+import com.yuxuan.admin.expression.activity.UHistoryRecordActivity;
 import com.yuxuan.admin.expression.activity.UMyInfomationActivity;
+import com.yuxuan.admin.expression.activity.UMyOrdersActivity;
+import com.yuxuan.admin.expression.activity.UMyPaiJianActivity;
 import com.yuxuan.admin.expression.activity.USetingActivity;
 import com.yuxuan.admin.expression.adapter.MyInfoAdapter;
 import com.yuxuan.admin.expression.entity.InfoItem;
@@ -113,22 +116,22 @@ public class MyInfoFragment extends Fragment implements View.OnClickListener {
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
                 String itemTextString = data.get(arg2).getTv_item_myinfo();
                 switch (itemTextString) {
-//                    // 我的订单
-//                    case "我的订单":
-//                        startActivity(new Intent(getActivity(), UMyOrdersActivity.class));
-//                        break;
+                    // 我的订单
+                    case "我的订单":
+                        startActivity(new Intent(getActivity(), UMyOrdersActivity.class));
+                        break;
                     // 我的信息
                     case "我的信息":
                         startActivity(new Intent(getActivity(), UMyInfomationActivity.class));
                         break;
-//                    // 我去派件
-//                    case "我去派件":
-//                        startActivity(new Intent(getActivity(), UMyPaiJianActivity.class));
-//                        break;
-//                    // 历史订单
-//                    case "历史订单":
-//                        startActivity(new Intent(getActivity(), UHistoryRecordActivity.class));
-//                        break;
+                    // 我去派件
+                    case "我去派件":
+                        startActivity(new Intent(getActivity(), UMyPaiJianActivity.class));
+                        break;
+                    // 历史订单
+                    case "历史订单":
+                        startActivity(new Intent(getActivity(), UHistoryRecordActivity.class));
+                        break;
                     // 关于我们
                     case "关于我们":
                         startActivity(new Intent(getActivity(), UAboutWeActivity.class));

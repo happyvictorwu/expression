@@ -118,7 +118,7 @@ public class KDFragment extends Fragment implements View.OnClickListener {
 
 
 
-    // 初始化布局 未完成
+    // 初始化布局
     private void findView(View view) {
 
         loadDialog = new CustomDialog(getActivity(), WindowManager.LayoutParams.WRAP_CONTENT,
@@ -153,7 +153,9 @@ public class KDFragment extends Fragment implements View.OnClickListener {
         bt_ok.setOnClickListener(this);
 
         lv_deliveTeam = (ListView) view.findViewById(R.id.lv_team);
+
         getData();
+
         lv_deliveTeam.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override

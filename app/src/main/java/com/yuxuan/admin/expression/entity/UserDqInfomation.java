@@ -5,7 +5,7 @@ package com.yuxuan.admin.expression.entity;
  * 文件名:   UserDqInfomation
  * 创建者:   YUXUAN
  * 创建时间: 2018/3/30 12:47
- * 描述:     bishe
+ * 描述:     快递信息实体类
  */
 
 import cn.bmob.v3.BmobObject;

@@ -152,6 +152,35 @@
             android:name=".activity.UIdentifyPhoneActivity"
             android:label="手机验证" />
 
+        <!-- 我的订单 -->
+        <activity
+            android:name=".activity.UMyOrdersActivity"
+            android:label="我的订单" />
+
+        <!-- 我去派件-->
+        <activity android:name=".activity.UMyPaiJianActivity"
+            android:label="我去派件" />
+
+        <!-- 我去派件-->
+        <activity android:name=".activity.UHistoryRecordActivity"
+            android:label="历史订单" />
+
+
+
+        <!-- 支付宝相关 -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" >
+        </activity>
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" >
+        </activity>
+        <!-- 支付宝相关 -->
 
 
 
