@@ -15,6 +15,27 @@
     <!-- 允许读取手机状态 用于创建BmobInstallation -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
+    <!--百度地图权限 -->
+    <!--读取系统信息，包含系统版本等信息，用作统计 -->
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <!--获取统计数据 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!--鉴权所需该权限获取进程列表 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!--使用步行AR导航，配置Camera权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!--百度地图定位 -->
+    <!-- 这个权限用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 这个权限用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <!-- SD卡读取权限，用户写入离线定位数据-->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+
+
     <application
         android:name=".application.BaseApplication"
         android:allowBackup="true"
@@ -54,7 +75,7 @@
         <!-- 找代取 -->
         <activity
             android:name=".activity.KDFoundTeamAndPersonActivity"
-            android:label="找代取" >
+            android:label="找代取">
             <intent-filter>
                 <action android:name="com.delivefunction.FirstChoose" />
 
@@ -80,7 +101,7 @@
         <!-- 我来赚钱 -->
         <activity
             android:name=".activity.KDZhuanQianActivity"
-            android:label="我来赚钱" >
+            android:label="我来赚钱">
             <intent-filter>
                 <action android:name="com.delivefunction.Zhuanqian" />
 
@@ -91,7 +112,7 @@
         <!-- 团队注册 -->
         <activity
             android:name=".activity.KDTeamRegister"
-            android:label="团队注册" >
+            android:label="团队注册">
             <intent-filter>
                 <action android:name="com.delivefunction.Team_shouye" />
 
@@ -102,7 +123,7 @@
         <!-- 个人注册 -->
         <activity
             android:name=".activity.KDGerenZhuceActivity"
-            android:label="个人注册" >
+            android:label="个人注册">
             <intent-filter>
                 <action android:name="com.delivefunction.Gerenzhuce" />
 
@@ -113,7 +134,7 @@
         <!-- 快递查询界面 -->
         <activity
             android:name=".activity.KDQueryActivity"
-            android:label="快递查询" >
+            android:label="快递查询">
             <intent-filter>
                 <action android:name="com.activity.KDQueryActivity" />
 
@@ -139,7 +160,7 @@
         <!-- 修改密码 -->
         <activity
             android:name=".activity.UModifyActivity"
-            android:label="密码修改" >
+            android:label="密码修改">
             <intent-filter>
                 <action android:name="com.fragment.MyInfoFragmentItem" />
 
@@ -158,13 +179,14 @@
             android:label="我的订单" />
 
         <!-- 我去派件-->
-        <activity android:name=".activity.UMyPaiJianActivity"
+        <activity
+            android:name=".activity.UMyPaiJianActivity"
             android:label="我去派件" />
 
         <!-- 我去派件-->
-        <activity android:name=".activity.UHistoryRecordActivity"
+        <activity
+            android:name=".activity.UHistoryRecordActivity"
             android:label="历史订单" />
-
 
 
         <!-- 支付宝相关 -->
@@ -172,17 +194,24 @@
             android:name="com.alipay.sdk.app.H5PayActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
-            android:screenOrientation="behind" >
-        </activity>
+            android:screenOrientation="behind"></activity>
         <activity
             android:name="com.alipay.sdk.auth.AuthActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
-            android:screenOrientation="behind" >
-        </activity>
+            android:screenOrientation="behind"></activity>
         <!-- 支付宝相关 -->
 
+        <!-- 百度地图密钥 -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="oZrgcojIXmK1EOBl66gwxGFh0WD2HGqX" />
 
+        <!--百度地图定位服务 -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote"></service>
 
 
     </application>

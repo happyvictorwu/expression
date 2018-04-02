@@ -9,6 +9,7 @@
 package com.yuxuan.admin.expression.application;
 import android.app.Application;
 
+import com.baidu.mapapi.SDKInitializer;
 import com.yuxuan.admin.expression.utils.L;
 import com.yuxuan.admin.expression.utils.StaticClass;
 
@@ -22,5 +23,8 @@ public class BaseApplication extends Application{
         L.d("init_OK");
         //初始化 Bmob 云服务
         Bmob.initialize(getApplicationContext(), StaticClass.BMOB_APPLICATION_ID);
+        //在使用SDK各组件之前初始化context信息，传入ApplicationContext
+        //注意该方法要再setContentView方法之前实现
+        SDKInitializer.initialize(getApplicationContext());
     }
 }

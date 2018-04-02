@@ -18,7 +18,22 @@ android {
         }
     }
     useLibrary 'org.apache.http.legacy'
+
+    sourceSets {
+        main {
+            jniLibs.srcDir 'Libs'
+        }
+    }
 }
+
+
+//添加本地仓库
+repositories {
+    flatDir {
+        dir 'libs'
+    }
+}
+
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
@@ -38,5 +53,8 @@ dependencies {
     compile('com.kymjs.rxvolley:rxvolley:1.1.4') {
         exclude group: 'io.reactivex'
     }
+    //支付宝
     compile files('libs/alipaySdk-20170309.jar')
+    //百度地图
+    compile files('libs/BaiduLBS_Android.jar')
 }

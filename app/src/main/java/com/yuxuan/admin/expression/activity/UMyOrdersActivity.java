@@ -5,15 +5,17 @@ package com.yuxuan.admin.expression.activity;
  * 文件名:   UMyOrdersActivity
  * 创建者:   YUXUAN
  * 创建时间: 2018/3/31 14:59
- * 描述:     bishe
+ * 描述:     订单
  */
 
 import android.annotation.SuppressLint;
+
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AlertDialog;
+
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
