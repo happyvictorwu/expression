@@ -201,7 +201,7 @@ public class LocalFragment extends Fragment implements View.OnClickListener {
                 for (Poi p : list) {
                     sb.append("\npoi= : ");
                     sb.append(p.getId() + " " + p.getName() + " " + p.getRank());
-                    et_position.setText(p.getName().toString().trim() + " 附近");
+                    et_position.setText(p.getName().trim() + "附近");
                 }
             }
             //定位的结果

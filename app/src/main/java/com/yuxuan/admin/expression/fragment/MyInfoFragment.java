@@ -81,6 +81,9 @@ public class MyInfoFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_myinfo, container, false);
         findView(view);
+
+
+
         return view;
     }
 
@@ -211,7 +214,6 @@ public class MyInfoFragment extends Fragment implements View.OnClickListener {
         L.i("pictureOk");
         startActivityForResult(intent, PICTURE_REQUEST_CODE);
         dialog.dismiss();
-
     }
 
     // 跳转相机
@@ -222,6 +224,7 @@ public class MyInfoFragment extends Fragment implements View.OnClickListener {
                 Uri.fromFile(new File(Environment.getExternalStorageDirectory(), PHOTO_IMAGE_FILE_NAME)));
         L.i("toCameraOk" + Environment.getExternalStorageDirectory());
         startActivityForResult(intent, CAMERA_REQUEST_CODE);
+
         dialog.dismiss();
     }
 
@@ -239,8 +242,9 @@ public class MyInfoFragment extends Fragment implements View.OnClickListener {
         intent.putExtra("aspectX", 1);
         intent.putExtra("aspectY", 1);
         // outputX outputY 是裁剪图片宽高
-        intent.putExtra("outputX", 200);
-        intent.putExtra("outputY", 200);
+        intent.putExtra("outputX", 320);
+        intent.putExtra("outputY", 320);
+        // 发送数据
         intent.putExtra("return-data", true);
 
         startActivityForResult(intent, RESULT_REQUEST_CODE);
@@ -252,7 +256,6 @@ public class MyInfoFragment extends Fragment implements View.OnClickListener {
             switch (requestCode) {
                 // 图片数据
                 case PICTURE_REQUEST_CODE:
-
                     startPhotoZoom(data.getData());
                     break;
                 // 相机数据
@@ -268,10 +271,18 @@ public class MyInfoFragment extends Fragment implements View.OnClickListener {
 
                         setImageToView(data);
 
+                        BitmapDrawable drawble = (BitmapDrawable) cv_head.getDrawable();
+                        String bmString = UtilTools.bitmapToString(getActivity(), drawble);
+                        ShareUtils.putString(getActivity(), "image_title", bmString);
+                        L.e("转换码：" + bmString);
+                        uploadImageHead(bmString);
+
                         // 删除缓存图片
                         if (tempFile != null) {
                             tempFile.delete();
                         }
+
+
                     }
 
                     break;
@@ -293,19 +304,18 @@ public class MyInfoFragment extends Fragment implements View.OnClickListener {
     }
 
     @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        BitmapDrawable drawble = (BitmapDrawable) cv_head.getDrawable();
-        String bmString = UtilTools.bitmapToString(getActivity(), drawble);
-        ShareUtils.putString(getActivity(), "image_title", bmString);
-        uploadImageHead(bmString);
+    public void onDestroy() {
+        super.onDestroy();
+
+
     }
 
     //上传图片到bmob
-    private void uploadImageHead(String bmString) {
+    public void uploadImageHead(String bmString) {
         BitmapDrawable bitmap = (BitmapDrawable) getResources().getDrawable(R.drawable.add_pic);
         String addPicImgString = UtilTools.bitmapToString(getActivity(), bitmap);
         if ( !bmString.equals(addPicImgString) ){
+            L.e("进入上传");
             MyUser newUser = new MyUser();
             newUser.setImgHead(bmString);
             BmobUser bmobUser = MyUser.getCurrentUser();

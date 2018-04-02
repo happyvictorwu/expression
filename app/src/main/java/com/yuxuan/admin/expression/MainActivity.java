@@ -3,6 +3,7 @@ package com.yuxuan.admin.expression;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
@@ -18,11 +19,16 @@ import android.widget.Toast;
 import com.yuxuan.admin.expression.fragment.KDFragment;
 import com.yuxuan.admin.expression.fragment.LocalFragment;
 import com.yuxuan.admin.expression.fragment.MyInfoFragment;
+import com.yuxuan.admin.expression.utils.L;
+import com.yuxuan.admin.expression.utils.ShareUtils;
+import com.yuxuan.admin.expression.utils.UtilTools;
 import com.yuxuan.admin.expression.view.ChangeColorIconWithText;
 import com.yuxuan.admin.expression.view.MyViewPager;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends FragmentActivity implements View.OnClickListener, ViewPager.OnPageChangeListener {
 

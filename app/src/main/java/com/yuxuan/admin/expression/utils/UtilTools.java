@@ -108,15 +108,14 @@ public class UtilTools {
     /**
      * 将图片转换为字符串
      *
-     * @param context
-     *            上下文
+     * @param context 上下文
      * @param drawble
-     *            BitmapDrawble类型的图片 可通过imageView.getDrawble()获得
+     * BitmapDrawble类型的图片 可通过imageView.getDrawble()获得
      * @return
      */
     public static String bitmapToString(Context context, BitmapDrawable drawble) {
         // 保存
-        // BitmapDrawable drawble = (BitmapDrawable) cv_head.getDrawable();
+        //BitmapDrawable drawble = (BitmapDrawable) cv_head.getDrawable();
         Bitmap bitmap = drawble.getBitmap();
 
         // 第一步 将bitmap 转换成字节数组输出流

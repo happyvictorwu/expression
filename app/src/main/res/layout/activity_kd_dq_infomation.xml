@@ -37,6 +37,7 @@
             android:layout_marginTop="3dp"
             android:background="@drawable/eselector"
             android:hint="地址/确保地址正确无误"
+            android:text="自动加载中....."
             android:textSize="15sp" />
 
         <EditText
@@ -77,5 +78,6 @@
             android:textColor="#fff"
             android:textSize="20dp" />
     </LinearLayout>
+
 
 </ScrollView>
