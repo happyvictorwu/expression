@@ -14,8 +14,10 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.StrictMode;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -64,14 +66,11 @@ public class MyInfoFragment extends Fragment implements View.OnClickListener {
     private CustomDialog dialog;
 
     private Button btn_cancel;
-    private Button btn_camera;
     private Button btn_picture;
 
     //初始化头像，从bomb读取的头像字符串
     String bmobImgString;
 
-    public static final String PHOTO_IMAGE_FILE_NAME = "fileName.jpg";
-    public static final int CAMERA_REQUEST_CODE = 100;
     public static final int PICTURE_REQUEST_CODE = 101;
     public static final int RESULT_REQUEST_CODE = 102;
 
@@ -79,6 +78,7 @@ public class MyInfoFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_myinfo, container, false);
         findView(view);
 
@@ -107,8 +107,6 @@ public class MyInfoFragment extends Fragment implements View.OnClickListener {
 
         btn_cancel = (Button) dialog.findViewById(R.id.btn_cancel);
         btn_cancel.setOnClickListener(this);
-        btn_camera = (Button) dialog.findViewById(R.id.btn_camera);
-        btn_camera.setOnClickListener(this);
         btn_picture = (Button) dialog.findViewById(R.id.btn_picture);
         btn_picture.setOnClickListener(this);
 
@@ -194,10 +192,6 @@ public class MyInfoFragment extends Fragment implements View.OnClickListener {
             case R.id.btn_cancel:
                 dialog.dismiss();
                 break;
-
-            case R.id.btn_camera:
-                toCamera();
-                break;
             case R.id.btn_picture:
                 toPicture();
                 break;
@@ -216,17 +210,6 @@ public class MyInfoFragment extends Fragment implements View.OnClickListener {
         dialog.dismiss();
     }
 
-    // 跳转相机
-    private void toCamera() {
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        // 判断内存是否可用
-        intent.putExtra(MediaStore.EXTRA_OUTPUT,
-                Uri.fromFile(new File(Environment.getExternalStorageDirectory(), PHOTO_IMAGE_FILE_NAME)));
-        L.i("toCameraOk" + Environment.getExternalStorageDirectory());
-        startActivityForResult(intent, CAMERA_REQUEST_CODE);
-
-        dialog.dismiss();
-    }
 
     // 裁剪
     private void startPhotoZoom(Uri uri) {
@@ -257,12 +240,6 @@ public class MyInfoFragment extends Fragment implements View.OnClickListener {
                 // 图片数据
                 case PICTURE_REQUEST_CODE:
                     startPhotoZoom(data.getData());
-                    break;
-                // 相机数据
-                case CAMERA_REQUEST_CODE:
-                    tempFile = new File(Environment.getExternalStorageDirectory(), PHOTO_IMAGE_FILE_NAME);
-                    L.i(tempFile + "");
-                    startPhotoZoom(Uri.fromFile(tempFile));
                     break;
 
                 case RESULT_REQUEST_CODE:

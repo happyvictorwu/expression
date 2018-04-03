@@ -4,24 +4,25 @@
     android:layout_height="match_parent"
     android:alpha="70">
 
-    <ImageView
-        android:id="@+id/team_money"
-        android:layout_width="100dp"
-        android:layout_height="130sp"
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="45dp"
-        android:src="@drawable/team_money"
-        android:clickable="true"/>
 
     <ImageView
         android:id="@+id/person_money"
         android:layout_width="100dp"
         android:layout_height="130sp"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/team_money"
-        android:layout_marginRight="45dp"
         android:src="@drawable/person_money"
-        android:clickable="true"/>
+        android:clickable="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="99dp" />
+
+    <ImageView
+        android:id="@+id/team_money"
+        android:layout_width="100dp"
+        android:layout_height="130sp"
+        android:src="@drawable/team_money"
+        android:clickable="true"
+        android:layout_below="@+id/person_money"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="92dp" />
 
 </RelativeLayout>

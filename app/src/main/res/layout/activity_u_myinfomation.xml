@@ -14,7 +14,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="昵称:"
+            android:text="昵       称:"
             android:textSize="18dp" />
 
         <EditText
@@ -36,7 +36,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="邮箱:"
+            android:text="邮       箱:"
             android:textSize="18dp" />
 
         <EditText
@@ -56,9 +56,10 @@
         android:padding="5dp" >
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="身份证:"
+            android:text="身  份  证:"
             android:textSize="18dp" />
 
         <EditText
@@ -80,7 +81,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="手机号:"
+            android:text="手  机  号:"
             android:textSize="18dp" />
 
         <EditText

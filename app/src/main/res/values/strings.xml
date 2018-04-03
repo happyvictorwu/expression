@@ -4,7 +4,7 @@
     <string name="password">密码:</string>
     <string name="input_account">用户名/邮箱/手机号</string>
     <string name="input_password">请输入密码</string>
-    <string name="login">登    陆</string>
+    <string name="login">登  陆</string>
     <string name="new_register">没有帐号?</string>
     <string name="action_search">查找</string>
     <string name="action_add">添加</string>

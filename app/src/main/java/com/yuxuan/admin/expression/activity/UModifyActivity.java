@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.yuxuan.admin.expression.R;
 import com.yuxuan.admin.expression.ui.BaseActivity;
 import com.yuxuan.admin.expression.utils.IpAdressUtils;
+import com.yuxuan.admin.expression.utils.L;
 import com.yuxuan.admin.expression.utils.Md5Utils;
 import com.yuxuan.admin.expression.utils.RemoteServiceUtils;
 
@@ -82,8 +83,6 @@ public class UModifyActivity extends BaseActivity implements View.OnClickListene
             case R.id.btn_login:
                 if (pwd.equals(rePwd) && !TextUtils.isEmpty(pwd) && !TextUtils.isEmpty(rePwd)
                         && !TextUtils.isEmpty(beforPwd)) {
-                    // 从sql server 修改
-                    // modifyPWDFromSQL(username, rePwd).equals("ok");
 
                     // 从Bmob 云后端修改
                     modifyPWDFromBmob(beforPwd, rePwd);
@@ -106,14 +105,14 @@ public class UModifyActivity extends BaseActivity implements View.OnClickListene
      */
     private void modifyPWDFromBmob(String beforPwd, String rePwd) {
         BmobUser.updateCurrentUserPassword(beforPwd, rePwd, new UpdateListener() {
-
             @Override
             public void done(BmobException e) {
                 if (e == null) {
                     Toast.makeText(UModifyActivity.this, "密码修改成功，可以用新密码进行登录啦", Toast.LENGTH_LONG).show();
                     finish();
                 } else {
-                    Toast.makeText(UModifyActivity.this, "旧密码不正确", Toast.LENGTH_LONG).show();
+                    L.i(e.toString());
+                    Toast.makeText(UModifyActivity.this, "失败" + e.getMessage(), Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -121,27 +120,4 @@ public class UModifyActivity extends BaseActivity implements View.OnClickListene
 
     }
 
-    /**
-     * 修改密码从 Sqlserver
-     * @param username
-     * @param password
-     * @return
-     */
-    public String modifyPWDFromSQL(String username, String password) {
-        String result = "no";
-        password = Md5Utils.string2MD5(password);
-        try {
-            String url = IpAdressUtils.getURL() + "/JsonWeb/modify/modifyPassword.action?username=" + username
-                    + "&password=" + password;
-            Log.i("Test", url);
-            String json = RemoteServiceUtils.loginRemoteService(url);
-            if (json != null) {
-                JSONObject jsonObject = new JSONObject(json);
-                result = jsonObject.get("Res").toString();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return result;
-    }
 }

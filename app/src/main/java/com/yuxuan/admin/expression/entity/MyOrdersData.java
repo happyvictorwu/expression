@@ -9,6 +9,7 @@ package com.yuxuan.admin.expression.entity;
  */
 
 public class MyOrdersData {
+    private String head;
     private String username;
     private String addr;
     private String phoneNumber;
@@ -17,7 +18,13 @@ public class MyOrdersData {
     private String status;
 
 
+    public String getHead() {
+        return head;
+    }
 
+    public void setHead(String head) {
+        this.head = head;
+    }
     public String getOther() {
         return other;
     }

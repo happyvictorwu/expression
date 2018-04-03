@@ -119,7 +119,6 @@ public class LoginActivity extends Activity implements View.OnClickListener{
                 String username = et_acconut.getText().toString();
                 String password = et_userpassword.getText().toString();
 
-                // loginInSQLserver(username, password);
                 loginInBmob(username, password);
                 break;
             case R.id.ib_qq:

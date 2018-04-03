@@ -161,8 +161,6 @@ public class UMyOrdersActivity extends BaseActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_u_my_orders);
-
-
         initView();
 
     }
@@ -242,7 +240,7 @@ public class UMyOrdersActivity extends BaseActivity implements View.OnClickListe
                 } else {
                     L.i("queryData失败：" + e.getMessage());
                     handler.sendEmptyMessage(CACHE_DATA_FAIL);
-                    Toast.makeText(UMyOrdersActivity.this, "加载失败", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(UMyOrdersActivity.this, "加载失败", Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -4,25 +4,27 @@
     android:layout_height="match_parent"
     android:alpha="70">
 
+
     <ImageView
         android:id="@+id/ib_individual_choose"
         android:layout_width="100dp"
         android:layout_height="130sp"
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="45dp"
         android:src="@drawable/individual_choose"
-        android:clickable="true"/>
+        android:clickable="true"
+        android:layout_marginTop="99dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:id="@+id/ib_team_choose"
         android:layout_width="100dp"
         android:layout_height="130sp"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="45dp"
         android:src="@drawable/team_choose"
-        android:clickable="true"/>
+        android:clickable="true"
+        android:layout_marginTop="92dp"
+        android:layout_below="@+id/ib_individual_choose"
+        android:layout_alignLeft="@+id/ib_individual_choose"
+        android:layout_alignStart="@+id/ib_individual_choose" />
 
 
 </RelativeLayout>

@@ -4,66 +4,99 @@
     android:layout_height="match_parent"
     android:padding="10dp">
 
-    <TextView
-        android:id="@+id/tv_send_nichen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="你需要为xx派件"
-        android:textSize="14sp"/>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#C0C0C0"/>
-
-    <!-- 派件地址 -->
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="3dp"
-        android:padding="3dp">
+        android:padding="10dp"
+        android:background="@drawable/bg_edittext">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="派件地址："
-            android:textSize="14sp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="1dp"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/tv_send_addr"
-            android:layout_width="wrap_content"
+            <ImageView
+                android:id="@+id/iv_head"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:padding="4dp"
+                android:src="@drawable/user_1" />
+
+            <TextView
+                android:id="@+id/tv_send_nichen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="你需要为 ... 派件"
+                android:layout_marginLeft="6dp"
+                android:layout_marginStart="6dp"
+                android:textSize="14sp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/iv_head"
+                android:layout_toEndOf="@+id/iv_head"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#C0C0C0"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="地址"
-            android:textSize="14sp"/>
+            android:orientation="horizontal"
+            android:layout_marginTop="3dp"
+            android:padding="3dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="派件地址："
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/tv_send_addr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="loading"
+                android:gravity="center"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="3dp"
+            android:padding="3dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="派件电话："
+                android:layout_marginLeft="20dp"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/tv_send_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="loading"
+                android:gravity="center"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
 
     </LinearLayout>
-
-    <!-- 派件电话 -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="3dp"
-        android:padding="3dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="派件电话："
-            android:textSize="14sp"/>
-
-        <TextView
-            android:id="@+id/tv_send_phone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="电话"
-            android:textSize="14sp"/>
-
-    </LinearLayout>
-
-
 
 </LinearLayout>

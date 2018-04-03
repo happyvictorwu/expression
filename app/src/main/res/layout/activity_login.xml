@@ -22,7 +22,7 @@
 
         <!-- 输入用户名 -->
         <LinearLayout
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="27dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_edittext"
@@ -67,7 +67,6 @@
             >
 
             <TextView
-                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="密    码"
@@ -100,6 +99,7 @@
 
             <CheckBox
                 android:id="@+id/cb_remberPWD"
+
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
@@ -116,7 +116,7 @@
                 android:gravity="center_vertical"
                 android:text="@string/new_register"
                 android:textColor="#0000ff"
-                android:textSize="12sp"
+                android:textSize="15sp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
@@ -129,8 +129,10 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:background="@drawable/button_form"
-            android:text="@string/login"
+            android:text="登      陆"
             android:textSize="20sp"
             android:textColor="@android:color/white" />
 
