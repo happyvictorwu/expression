@@ -15,7 +15,7 @@
         android:gravity="center"
         android:text="加载中..."
         android:textColor="#C0C0C0"
-        android:textSize="15dp" />
+        android:textSize="20dp" />
 
     <!-- 送件地址 -->
     <LinearLayout

@@ -4,63 +4,198 @@
     android:layout_height="match_parent"
     android:padding="30dp">
 
-    <EditText
-        android:id="@+id/et_team_teleohone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="请输入团队电话"
-        android:singleLine="true"
-        android:textSize="15sp"
-        android:background="@drawable/eselector"
-        android:layout_marginTop="10dp"/>
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:src="@drawable/team_money"/>
 
-    <EditText
-        android:id="@+id/et_team_mail"
+    <LinearLayout
+        android:layout_marginTop="27dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="请输入团队邮箱"
-        android:singleLine="true"
-        android:textSize="15sp"
-        android:background="@drawable/eselector"
-        android:layout_marginTop="3dp" />
+        android:background="@drawable/bg_edittext"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        >
 
-    <EditText
-        android:id="@+id/et_tname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="请输入团队名称"
-        android:singleLine="true"
-        android:textSize="15sp"
-        android:background="@drawable/eselector"
-        android:layout_marginTop="3dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="团队电话"
+            android:textColor="#444444"
+            android:textSize="18sp" />
 
-    <EditText
-        android:id="@+id/et_team_num"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="请输入团队人数"
-        android:singleLine="true"
-        android:textSize="15sp"
-        android:background="@drawable/eselector"
-        android:layout_marginTop="3dp" />
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="#d2d2d2" />
 
-    <EditText
+        <EditText
+            android:id="@+id/et_team_teleohone"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:hint="  请输入团队电话"
+            android:background="@null"
+            android:textColorHint="#AAAAAA"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="请输入学校名称"
-        android:singleLine="true"
-        android:textSize="15sp"
-        android:background="@drawable/eselector"
-        android:layout_marginTop="3dp" />
+        android:background="@drawable/bg_edittext"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="团队邮箱"
+            android:textColor="#444444"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="#d2d2d2" />
+
+        <EditText
+            android:id="@+id/et_team_mail"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:hint="  请输入团队邮箱"
+            android:background="@null"
+            android:textColorHint="#AAAAAA"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_edittext"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="团队名称"
+            android:textColor="#444444"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="#d2d2d2" />
+
+        <EditText
+            android:id="@+id/et_tname"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:hint="  请输入团队名称"
+            android:background="@null"
+            android:textColorHint="#AAAAAA"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_edittext"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="团队人数"
+            android:textColor="#444444"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="#d2d2d2" />
+
+        <EditText
+            android:id="@+id/et_team_num"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:hint="  请输入团队人数"
+            android:background="@null"
+            android:textColorHint="#AAAAAA"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_edittext"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="学校名称"
+            android:textColor="#444444"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="#d2d2d2" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:hint="  请输入学校名称"
+            android:background="@null"
+            android:textColorHint="#AAAAAA"
+            android:textSize="15sp" />
+    </LinearLayout>
+
 
     <Button
         android:id="@+id/bt_zhuce"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:background="@drawable/selector"
         android:textColor="@android:color/white"
         android:text="@string/bt_zhuce"
+        android:textStyle="bold"
         android:textSize="20sp"/>
 
 </LinearLayout>

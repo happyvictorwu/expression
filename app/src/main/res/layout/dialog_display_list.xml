@@ -13,7 +13,7 @@
         android:gravity="center"
         android:text="加载中..."
         android:textColor="#C0C0C0"
-        android:textSize="15dp" />
+        android:textSize="20dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,10 +45,11 @@
         android:orientation="horizontal"
         android:padding="5dp" >
 
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="电话:"
+            android:text="电        话:"
             android:textSize="15dp" />
 
         <TextView

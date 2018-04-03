@@ -9,14 +9,29 @@
         android:orientation="vertical"
         android:padding="15dp" >
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="代取信息填写：（自动生成手机号和当前定位地址）"
-            android:textSize="15dp"/>
 
         <LinearLayout
-            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/home_picture"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="代取信息"
+                android:layout_gravity="center"
+                android:textSize="15dp"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_edittext"

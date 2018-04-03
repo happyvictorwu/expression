@@ -3,18 +3,25 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    android:padding="10dp">
+    android:padding="20dp">
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/tab_address_normal"
+        android:layout_gravity="center"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_marginTop="20dp"
         android:padding="5dp" >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="昵       称:"
+            android:text="昵       称:  "
             android:textSize="18dp" />
 
         <EditText
@@ -36,7 +43,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="邮       箱:"
+            android:text="邮       箱:  "
             android:textSize="18dp" />
 
         <EditText
@@ -59,7 +66,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="身  份  证:"
+            android:text="身  份  证:  "
             android:textSize="18dp" />
 
         <EditText
@@ -81,7 +88,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="手  机  号:"
+            android:text="手  机  号:  "
             android:textSize="18dp" />
 
         <EditText
@@ -103,7 +110,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="真实姓名:"
+            android:text="真实姓名:  "
             android:textSize="18dp" />
 
         <EditText
@@ -129,7 +136,7 @@
             android:layout_marginRight="40dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/selector"
-            android:text="修改资料"
+            android:text="修 改 资 料"
             android:textColor="#fff"
             android:textSize="15dp" />
 
@@ -142,7 +149,7 @@
             android:layout_marginRight="40dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/selector"
-            android:text="确认修改"
+            android:text="确 认 修 改"
             android:visibility="gone"
             android:textColor="#fff"
             android:textSize="15dp" />

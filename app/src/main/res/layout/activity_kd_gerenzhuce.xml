@@ -4,46 +4,152 @@
     android:layout_height="match_parent"
     android:padding="30dp">
 
-    <EditText
-        android:id="@+id/et_phoneNumber"
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:src="@drawable/person_money"/>
+
+    <LinearLayout
+        android:layout_marginTop="27dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/bg_edittext"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="手机号"
+            android:textColor="#444444"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="#d2d2d2" />
+
+        <EditText
+            android:id="@+id/et_phoneNumber"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:hint="  请输入手机号"
+            android:background="@null"
+            android:textColorHint="#AAAAAA"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_marginTop="10dp"
-        android:background="@drawable/eselector"
-        android:hint="手机号"
-        android:singleLine="true"
-        android:textSize="15sp" >
-    </EditText>
-
-    <EditText
-        android:id="@+id/et_mail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:background="@drawable/eselector"
-        android:hint="邮箱"
-        android:singleLine="true"
-        android:textSize="15sp" />
+        android:background="@drawable/bg_edittext"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        >
 
-    <EditText
-        android:id="@+id/et_real_name"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="邮箱"
+            android:textColor="#444444"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="#d2d2d2" />
+
+        <EditText
+            android:id="@+id/et_mail"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:hint="  请输入邮箱"
+            android:background="@null"
+            android:textColorHint="#AAAAAA"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:background="@drawable/eselector"
-        android:hint="真实姓名"
-        android:singleLine="true"
-        android:textSize="15sp" />
+        android:background="@drawable/bg_edittext"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        >
 
-    <EditText
-        android:id="@+id/et_idcard"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="真实姓名"
+            android:textColor="#444444"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="#d2d2d2" />
+
+        <EditText
+            android:id="@+id/et_real_name"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:hint="  请输入真实姓名"
+            android:background="@null"
+            android:textColorHint="#AAAAAA"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:background="@drawable/eselector"
-        android:hint="身份证号"
-        android:singleLine="true"
-        android:textSize="15sp" />
+        android:background="@drawable/bg_edittext"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="身份证号"
+            android:textColor="#444444"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="#d2d2d2" />
+
+        <EditText
+            android:id="@+id/et_idcard"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:hint="  请输入身份证"
+            android:background="@null"
+            android:textColorHint="#AAAAAA"
+            android:textSize="15sp" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_regiest"

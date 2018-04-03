@@ -82,7 +82,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="3"
                 android:background="@drawable/eselector"
-                android:hint="再次输入"
+                android:hint="再次输入新密码"
                 android:inputType="textPassword"
                 android:maxLength="12"
                 android:textSize="15dp" />
@@ -103,7 +103,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="至少使用字母、数字和符号两种及以上的组合，6-12个字符"
+                android:text="至少使用字母、数字和符号两种及以上的组合，3-12个字符"
                 android:textSize="10sp" />
         </LinearLayout>
 
