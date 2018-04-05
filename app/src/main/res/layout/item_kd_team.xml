@@ -3,36 +3,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_vertical"
-    android:padding="10dp"
-    android:orientation="horizontal" >
+    android:orientation="horizontal"
+    android:padding="1dp">
 
-    <ImageView
-        android:id="@+id/iv_kd_head"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:src="@drawable/logo" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/bg_edittext"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        >
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_kd_head"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/logo"
+            android:padding="5dp"/>
 
-    <TextView
-        android:id="@+id/tv_team_name"
-        android:layout_width="0dp"
-        android:layout_marginLeft="10dp"
-        android:layout_height="wrap_content"
-        android:text="用户名" 
-        android:layout_weight="1"/>
-    
-      <TextView
-        android:id="@+id/tv_team_property"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="个人代取" />
-    
-      <TextView 
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:focusable = "false"
-          android:text="找他代取"
-          android:textSize="15sp"/>
+        <TextView
+            android:id="@+id/tv_team_name"
+            android:layout_width="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content"
+            android:text="用户名"
+            android:layout_weight="0.8"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_team_property"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="个人代取" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusable = "false"
+            android:layout_weight="0.1"
+            android:text="找他代取"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+
 
 </LinearLayout>
 

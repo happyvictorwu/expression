@@ -26,20 +26,10 @@ import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.baidu.location.Poi;
-import com.baidu.mapapi.map.BaiduMap;
-import com.baidu.mapapi.map.BitmapDescriptor;
-import com.baidu.mapapi.map.BitmapDescriptorFactory;
-import com.baidu.mapapi.map.MapStatusUpdate;
-import com.baidu.mapapi.map.MapStatusUpdateFactory;
-import com.baidu.mapapi.map.MapView;
-import com.baidu.mapapi.map.MarkerOptions;
-import com.baidu.mapapi.map.OverlayOptions;
-import com.baidu.mapapi.model.LatLng;
 import com.baidu.mapapi.radar.RadarSearchManager;
 import com.yuxuan.admin.expression.R;
 import com.yuxuan.admin.expression.entity.MyUser;
 import com.yuxuan.admin.expression.entity.UserDqInfomation;
-import com.yuxuan.admin.expression.fragment.LocalFragment;
 import com.yuxuan.admin.expression.ui.BaseActivity;
 import com.yuxuan.admin.expression.utils.L;
 import com.yuxuan.admin.expression.utils.UtilTools;
@@ -307,7 +297,7 @@ public class KDDQInfomationActivity extends BaseActivity implements View.OnClick
                 for (Poi p : list) {
                     sb.append("\npoi= : ");
                     sb.append(p.getId() + " " + p.getName() + " " + p.getRank());
-                    et_addr.setText(p.getName().trim());
+                    et_addr.setText(p.getName().trim() + "附近");
                 }
             }
             //定位的结果

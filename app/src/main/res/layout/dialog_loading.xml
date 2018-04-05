@@ -10,7 +10,6 @@
         android:id="@+id/iv_pb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@anim/amin_pgbar"
         android:contentDescription="加载中..."
-        />
+        android:src="@drawable/amin_pgbar" />
 </LinearLayout>

@@ -25,6 +25,8 @@ import com.yuxuan.admin.expression.utils.IpAdressUtils;
 import com.yuxuan.admin.expression.utils.L;
 import com.yuxuan.admin.expression.utils.Md5Utils;
 import com.yuxuan.admin.expression.utils.RemoteServiceUtils;
+import com.yuxuan.admin.expression.utils.ShareUtils;
+import com.yuxuan.admin.expression.utils.UtilTools;
 
 import org.json.JSONObject;
 
@@ -84,8 +86,9 @@ public class UModifyActivity extends BaseActivity implements View.OnClickListene
                 if (pwd.equals(rePwd) && !TextUtils.isEmpty(pwd) && !TextUtils.isEmpty(rePwd)
                         && !TextUtils.isEmpty(beforPwd)) {
 
-                    // 从Bmob 云后端修改
-                    modifyPWDFromBmob(beforPwd, rePwd);
+
+                    modifyPWDFromBmob(beforPwd, rePwd);// 从Bmob 云后端修改
+
                 } else if (!pwd.equals(rePwd)) {
                     Toast.makeText(UModifyActivity.this, "密码不一致", Toast.LENGTH_SHORT).show();
                 } else {
@@ -103,21 +106,31 @@ public class UModifyActivity extends BaseActivity implements View.OnClickListene
      * @param beforPwd
      * @param rePwd
      */
-    private void modifyPWDFromBmob(String beforPwd, String rePwd) {
-        BmobUser.updateCurrentUserPassword(beforPwd, rePwd, new UpdateListener() {
-            @Override
-            public void done(BmobException e) {
-                if (e == null) {
-                    Toast.makeText(UModifyActivity.this, "密码修改成功，可以用新密码进行登录啦", Toast.LENGTH_LONG).show();
-                    finish();
-                } else {
-                    L.i(e.toString());
-                    Toast.makeText(UModifyActivity.this, "失败" + e.getMessage(), Toast.LENGTH_LONG).show();
+    private void modifyPWDFromBmob(String beforPwd, final String rePwd) {
+        String password = ShareUtils.getString(UModifyActivity.this, "password", "");
+        if(beforPwd.equals(password)) {
+            BmobUser newUser = new BmobUser();
+            newUser.setPassword(rePwd);
+            BmobUser bmobUser = BmobUser.getCurrentUser();
+            newUser.update(bmobUser.getObjectId(),new UpdateListener() {
+                @Override
+                public void done(BmobException e) {
+                    if(e==null){
+                        Toast.makeText(UModifyActivity.this, "密码修改成功，可以用新密码进行登录啦", Toast.LENGTH_LONG).show();
+                        ShareUtils.putString(UModifyActivity.this, "password", rePwd);
+                        finish();
+                    }else{
+                        Toast.makeText(UModifyActivity.this, "密码异常！" + e.toString(), Toast.LENGTH_LONG).show();
+                    }
                 }
-            }
+            });
 
-        });
+        }else {
+            Toast.makeText(UModifyActivity.this, "原密码输入错误！" , Toast.LENGTH_LONG).show();
+
+        }
 
     }
+    
 
 }

@@ -118,8 +118,8 @@ public class LoginActivity extends Activity implements View.OnClickListener{
             case R.id.bt_login: // 点击登录按钮
                 String username = et_acconut.getText().toString();
                 String password = et_userpassword.getText().toString();
-
                 loginInBmob(username, password);
+
                 break;
             case R.id.ib_qq:
                 Toast.makeText(this, "敬请期待", Toast.LENGTH_SHORT).show();
@@ -157,7 +157,7 @@ public class LoginActivity extends Activity implements View.OnClickListener{
                 }
             }
         });
-
+        ShareUtils.putString(this, "ObjectId", myUser.getObjectId() );
     }
 
     // 接受注册页面 RegiesActivity返回的数据

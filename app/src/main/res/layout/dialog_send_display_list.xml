@@ -27,7 +27,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="送件地址:"
+            android:text="地址:"
             android:textSize="15dp" />
 
         <TextView
@@ -52,7 +52,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="快件描述:"
+            android:text="描述:"
             android:textSize="15dp" />
 
         <TextView
@@ -78,7 +78,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="其他信息:"
+            android:text="时间:"
             android:textSize="15dp" />
 
         <TextView
@@ -102,7 +102,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="电话:"
+            android:text=" 电        话:"
             android:textSize="15dp" />
 
         <TextView

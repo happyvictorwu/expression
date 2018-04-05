@@ -5,7 +5,7 @@ package com.yuxuan.admin.expression.utils;
  * 文件名:   OrderInfoUtil2_0
  * 创建者:   YUXUAN
  * 创建时间: 2018/3/31 15:10
- * 描述:     bishe
+ * 描述:     支付宝工具类
  */
 
 import com.yuxuan.admin.expression.demo.SignUtils;
@@ -70,9 +70,6 @@ public class OrderInfoUtil2_0 {
 
     /**
      * 构造支付订单参数列表
-     *
-     * @param app_id
-     * @param rsa2
      * @return
      */
     public static Map<String, String> buildOrderParamMap(String app_id, boolean rsa2) {
@@ -80,7 +77,7 @@ public class OrderInfoUtil2_0 {
 
         keyValues.put("app_id", app_id);
 
-        keyValues.put("biz_content", "{\"timeout_express\":\"30m\",\"product_code\":\"QUICK_MSECURITY_PAY\",\"total_amount\":\"0.02\",\"subject\":\"校园小蜜的付款项目\",\"body\":\"我是测试数据\",\"out_trade_no\":\"" + getOutTradeNo() + "\"}");
+        keyValues.put("biz_content", "{\"timeout_express\":\"30m\",\"product_code\":\"QUICK_MSECURITY_PAY\",\"total_amount\":\"0.01\",\"subject\":\"1\",\"body\":\"我是测试数据\",\"out_trade_no\":\"" + getOutTradeNo() +  "\"}");
 
         keyValues.put("charset", "utf-8");
 
@@ -98,7 +95,8 @@ public class OrderInfoUtil2_0 {
     /**
      * 构造支付订单参数信息
      *
-     * @param map 支付订单参数
+     * @param map
+     * 支付订单参数
      * @return
      */
     public static String buildOrderParam(Map<String, String> map) {
@@ -146,7 +144,9 @@ public class OrderInfoUtil2_0 {
     /**
      * 对支付参数信息进行签名
      *
-     * @param map 待签名授权信息
+     * @param map
+     *            待签名授权信息
+     *
      * @return
      */
     public static String getSign(Map<String, String> map, String rsaKey, boolean rsa2) {
@@ -179,7 +179,6 @@ public class OrderInfoUtil2_0 {
 
     /**
      * 要求外部订单号必须唯一。
-     *
      * @return
      */
     private static String getOutTradeNo() {
@@ -192,4 +191,5 @@ public class OrderInfoUtil2_0 {
         key = key.substring(0, 15);
         return key;
     }
+
 }

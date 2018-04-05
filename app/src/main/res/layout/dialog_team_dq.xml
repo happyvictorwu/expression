@@ -4,12 +4,11 @@
     android:layout_height="match_parent"
     android:background="@drawable/dialog_white_bg"
     android:orientation="vertical"
-    android:padding="20dp" >
+    android:padding="10dp" >
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:src="@drawable/heart"
         android:layout_gravity="center"/>
 
@@ -17,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="10dp"
+
         android:padding="5dp" >
 
         <TextView
@@ -140,7 +139,7 @@
         android:padding="10dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/selector"
         android:gravity="center"
         android:text="就选他了"

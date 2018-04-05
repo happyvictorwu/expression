@@ -42,7 +42,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="手 机 号"
+                android:text="手 机  号"
                 android:textColor="#444444"
                 android:textSize="18sp" />
 
@@ -163,7 +163,7 @@
                 android:layout_height="36dp"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="1"
-                android:hint=" 简要说明"
+                android:hint="  (快递公司 第几批)"
                 android:background="@null"
                 android:textColorHint="#AAAAAA"
                 android:textSize="15sp" />

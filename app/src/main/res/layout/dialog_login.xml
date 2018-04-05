@@ -10,7 +10,7 @@
         android:id="@+id/iv_pb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@anim/amin_pgbar"
+        android:src="@drawable/amin_pgbar"
         />
     <TextView
         android:layout_width="wrap_content"

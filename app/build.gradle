@@ -54,7 +54,7 @@ dependencies {
         exclude group: 'io.reactivex'
     }
     //支付宝
-    compile files('libs/alipaySdk-20170309.jar')
+    compile files('libs/alipaySdk-20180316.jar')
     //百度地图
     compile files('libs/BaiduLBS_Android.jar')
 }

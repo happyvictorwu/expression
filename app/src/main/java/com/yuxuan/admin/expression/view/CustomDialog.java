@@ -5,7 +5,7 @@ package com.yuxuan.admin.expression.view;
  * 文件名:   CustomDialog
  * 创建者:   YUXUAN
  * 创建时间: 2018/1/2 15:56
- * 描述:     bishe
+ * 描述:     自定义Dialog
  */
 
 import android.app.Dialog;
@@ -39,7 +39,7 @@ public class CustomDialog extends Dialog {
     //实例
     public CustomDialog(Context context, int width, int height, int layout, int style, int gravity){
 
-        this(context, width, height, layout, style, gravity, R.style.pop_anim_style);
+        this(context, width, height, layout, style, gravity,R.style.pop_anim_style);
 
     }
 }
