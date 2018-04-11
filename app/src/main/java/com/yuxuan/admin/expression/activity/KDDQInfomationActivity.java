@@ -147,7 +147,6 @@ public class KDDQInfomationActivity extends BaseActivity implements View.OnClick
             @Override
             public void done(String objectId, BmobException e) {
                 if (e == null) {
-                    //Toast.makeText(KDDQInfomationActivity.this, "创建数据成功：" + objectId, Toast.LENGTH_SHORT).show();
                     L.i("添加ok");
                     dialog.dismiss();
                     new AlertDialog.Builder(KDDQInfomationActivity.this).setTitle("注意")
@@ -297,9 +296,10 @@ public class KDDQInfomationActivity extends BaseActivity implements View.OnClick
                 for (Poi p : list) {
                     sb.append("\npoi= : ");
                     sb.append(p.getId() + " " + p.getName() + " " + p.getRank());
-                    et_addr.setText(p.getName().trim() + "附近");
                 }
             }
+            String locationDescribe = location.getPoiList().get(1).getName();
+            et_addr.setText(locationDescribe.trim() + "附近");
             //定位的结果
             L.i(sb.toString());
             L.e("结束定位");

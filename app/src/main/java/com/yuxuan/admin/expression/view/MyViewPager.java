@@ -13,7 +13,7 @@ import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
-public class MyViewPager extends ViewPager {
+public class    MyViewPager extends ViewPager {
 
     private boolean scroll = true;
     public MyViewPager(Context context) {

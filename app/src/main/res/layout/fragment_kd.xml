@@ -18,7 +18,10 @@
             <android.support.v4.view.ViewPager
                 android:id="@+id/adv_pager"
                 android:layout_width="match_parent"
-                android:layout_height="150dp" >
+                android:layout_height="150dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
             </android.support.v4.view.ViewPager>
 
             <LinearLayout
@@ -130,11 +133,10 @@
 		 -->
 
         <ListView
-            android:layout_marginTop="15dp"
             android:id="@+id/lv_team"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-        </ListView>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"></ListView>
     </LinearLayout>
 
 </ScrollView>

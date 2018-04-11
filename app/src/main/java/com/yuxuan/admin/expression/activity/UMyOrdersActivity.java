@@ -5,7 +5,7 @@ package com.yuxuan.admin.expression.activity;
  * 文件名:   UMyOrdersActivity
  * 创建者:   YUXUAN
  * 创建时间: 2018/3/31 14:59
- * 描述:     订单
+ * 描述:     我的订单
  */
 
 import android.annotation.SuppressLint;

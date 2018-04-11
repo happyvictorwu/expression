@@ -162,7 +162,7 @@ public class KDGerenZhuceActivity extends BaseActivity implements View.OnClickLi
                 }
             });
 
-        }else{
+        } else{
             if( !UtilTools.checkMobileNumber(phoneNumber) ){
                 Toast.makeText(this, "电话输入格式不正确", Toast.LENGTH_SHORT).show();
             }else if ( !UtilTools.checkEmail(email) ){
