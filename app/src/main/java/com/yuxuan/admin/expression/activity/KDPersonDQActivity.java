@@ -189,7 +189,6 @@ public class KDPersonDQActivity extends BaseActivity implements View.OnClickList
                 }
             }
         });
-
     }
 
     @Override
